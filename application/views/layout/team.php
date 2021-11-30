@@ -40,7 +40,17 @@
                         <div class="team-member">
                             <img class="mx-auto rounded-circle" src="<?php echo base_url()?>assets/img/team/fa.jpg" alt="" />
                             <h4>Fahrazy Ash Shiddiq</h4>
-                            <p class="text-muted">1221265</p>
+                            <p class="text-muted">12201265</p>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+					<div class="col-lg-3">
+                        <div class="team-member">
+                            <img class="mx-auto rounded-circle" src="<?php echo base_url()?>assets/img/team/ed.jpg" alt="" />
+                            <h4>Edo Aditya Saputra</h4>
+                            <p class="text-muted">12201304</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-instagram"></i></a>
