@@ -18,7 +18,7 @@
                     </div>
                     <div class="col-lg-3">
                         <div class="team-member">
-                            <img class="mx-auto rounded-circle" src="<?php echo base_url()?>assets/img/team/cs.jpeg" alt="" />
+                            <img class="mx-auto rounded-circle" src="<?php echo base_url()?>assets/img/team/cr1.jpg" alt="" />
                             <h4>Chelsea Nillesia</h4>
                             <p class="text-muted">122001242</p>
                             <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
