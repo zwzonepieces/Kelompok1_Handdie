@@ -19,7 +19,7 @@
 
   <style type="text/css">
       body{
-        background-image: url('<?php echo base_url('assets/images/logoumkm.jpg')?>');
+        background-image: url('<?php echo base_url('assets/images/handdie.png')?>');
         background-size: cover;
         background-repeat: no-repeat;
         height: 100vh;
