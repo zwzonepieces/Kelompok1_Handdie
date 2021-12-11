@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 23, 2021 at 01:48 PM
+-- Generation Time: Dec 11, 2021 at 01:25 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.30
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `handdie`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tbl_administrator`
+--
+
+CREATE TABLE `tbl_administrator` (
+  `administrator_id` int(11) NOT NULL,
+  `album_id` int(11) NOT NULL,
+  `inbox_id` int(11) NOT NULL,
+  `rate_id` int(11) NOT NULL,
+  `komentar_id` int(11) NOT NULL,
+  `kategori_id` int(11) NOT NULL,
+  `pengunjung_id` int(11) NOT NULL,
+  `produk_id` int(11) NOT NULL,
+  `pengguna_id` int(11) NOT NULL,
+  `pembeli_id` int(11) NOT NULL,
+  `views_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -42,7 +62,7 @@ CREATE TABLE `tbl_album` (
 --
 
 INSERT INTO `tbl_album` (`album_id`, `album_nama`, `album_tanggal`, `album_pengguna_id`, `album_author`, `album_count`, `album_cover`) VALUES
-(4, 'Meme', '2017-01-24 01:31:13', 1, 'M Fikri Setiadi', 8, '463cc7af7e2f6907c0aea38df42bb31c.jpg');
+(4, 'Meme', '2021-11-23 06:07:55', 1, 'Rizki Lutfiandi', 8, '463cc7af7e2f6907c0aea38df42bb31c.jpg');
 
 -- --------------------------------------------------------
 
@@ -77,11 +97,11 @@ CREATE TABLE `tbl_kategori` (
 --
 
 INSERT INTO `tbl_kategori` (`kategori_id`, `kategori_nama`, `kategori_tanggal`) VALUES
-(1, 'Produk', '2016-09-06 05:49:04'),
-(2, 'Fashion', '2016-09-06 05:50:01'),
-(3, 'Makanan', '2016-09-06 05:59:39'),
-(5, 'Teknologi', '2016-09-06 06:19:26'),
-(7, 'Jam Tangan', '2021-10-08 01:53:28');
+(1, 'Produk', '2021-11-23 06:07:55'),
+(2, 'Fashion', '2021-11-23 06:07:55'),
+(3, 'Makanan', '2021-11-23 06:07:55'),
+(5, 'Teknologi', '2021-11-23 06:07:55'),
+(7, 'Jam Tangan', '2021-11-23 06:07:55');
 
 -- --------------------------------------------------------
 
@@ -149,7 +169,7 @@ CREATE TABLE `tbl_pengguna` (
 --
 
 INSERT INTO `tbl_pengguna` (`pengguna_id`, `pengguna_nama`, `pengguna_moto`, `pengguna_jenkel`, `pengguna_username`, `pengguna_password`, `pengguna_tentang`, `pengguna_email`, `pengguna_nohp`, `pengguna_alamat`, `pengguna_pemilik`, `pengguna_facebook`, `pengguna_instagram`, `pengguna_status`, `pengguna_level`, `pengguna_register`, `pengguna_photo`) VALUES
-(1, 'Administrator', 'Just do it', 'L', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 'fikrifiver97@gmail.com', '081277159401', NULL, '', '', '', 1, '2', '2021-11-23 06:07:55', '0f050fb938257f539cc72fffd9c5777a.jpg'),
+(1, 'Administrator', 'Just do it', 'L', 'admin', '21232f297a57a5a743894a0e4a801fc3', '', 'riskimpw9988@gmail.com', '085787926068', NULL, '', '', '', 1, '2', '2021-11-23 06:07:55', '0f050fb938257f539cc72fffd9c5777a.jpg'),
 (4, 'Artha Abadi Tenun Troso', NULL, 'L', 'artha', '202cb962ac59075b964b07152d234b70', NULL, 'arthajati@gmail.com', '089123457685', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.249531699328!2d110.689970701', 'Artha', NULL, NULL, 1, '1', '2021-11-23 06:07:55', 'e085ad6b5634e04e9bae3c18a150d0bd.png'),
 (7, 'Asia Raya Furnitur', NULL, 'L', 'raya', '202cb962ac59075b964b07152d234b70', 'Adapun Asia Raya Furnitur Adalah Tepat furnitur yang berkualitas sudah terbukti dari beberapa pesanan yang seslalu memuaskan pelanggan dengan kualitas terbaik', 'asiaraya@gmail.com', '088897654568', '<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.27867025633!2d110.67938821523862!3d-6.612256601025078!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e711fba4b94cda1%3A0x74cb10a127a701c!2sAsia%20Raya%20Furniture!5e0!3m2!1sid!2sid!4v1612922390937!5m2!1sid!2sid\" width=\"550\" height=\"300\" frameborder=\"0\" style=\"border:0;\" allowfullscreen=\"\" aria-hidden=\"false\" tabindex=\"0\"></iframe>', 'Raya', NULL, NULL, 1, '1', '2021-11-23 06:07:55', 'e62acdfc71512561cdf53bdbdcfed1f9.png'),
 (12, 'Toko Pakian', NULL, 'L', 'tokoku', 'fa2be74c7f270260fb14eb84cc3443c3', 'Menjual Pakaian Termurah Sepanjang Masa', 'tokoku@gmail.com', '087745502589', 'Alamat Pemilik Pa Toko', 'Pa Toko', NULL, NULL, 1, '2', '2021-11-23 06:07:55', '72ce851440dc23ee9fbdb737524eee2a.jpg');
@@ -172,81 +192,6 @@ CREATE TABLE `tbl_pengunjung` (
 --
 
 INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung_ip`, `pengunjung_perangkat`) VALUES
-(101, '2017-04-11 14:44:48', '125.161.179.203', 'Chrome'),
-(102, '2017-04-11 14:46:06', '114.125.55.58', 'Chrome'),
-(103, '2017-04-11 14:50:14', '158.140.182.11', 'Chrome'),
-(104, '2017-04-11 14:54:09', '202.67.33.22', 'Chrome'),
-(105, '2017-04-11 14:58:44', '120.188.65.30', 'Chrome'),
-(106, '2017-04-11 14:59:55', '120.188.77.153', 'Chrome'),
-(107, '2017-04-11 15:02:32', '125.167.185.147', 'Mozilla'),
-(108, '2017-04-11 15:04:23', '118.136.84.45', 'Chrome'),
-(109, '2017-04-11 15:04:41', '110.136.129.138', 'Chrome'),
-(110, '2017-04-11 15:04:52', '36.75.108.223', 'Chrome'),
-(111, '2017-04-11 15:05:46', '36.72.38.146', 'Chrome'),
-(112, '2017-04-11 15:06:31', '120.188.5.85', 'Chrome'),
-(113, '2017-04-11 15:09:53', '180.253.90.210', 'Chrome'),
-(114, '2017-04-11 15:12:18', '107.167.99.179', 'Opera'),
-(115, '2017-04-11 15:12:49', '112.215.171.165', 'Chrome'),
-(116, '2017-04-11 15:14:55', '203.166.201.206', 'Chrome'),
-(117, '2017-04-11 15:15:21', '107.167.99.208', 'Opera'),
-(118, '2017-04-11 15:15:25', '36.73.194.145', 'Mozilla'),
-(119, '2017-04-11 15:16:25', '107.167.113.164', 'Opera'),
-(120, '2017-04-11 15:16:42', '120.92.32.177', 'Chrome'),
-(121, '2017-04-11 15:17:23', '180.245.132.122', 'Chrome'),
-(122, '2017-04-11 15:17:56', '120.188.80.236', 'Chrome'),
-(123, '2017-04-11 15:17:57', '114.125.89.57', 'Chrome'),
-(124, '2017-04-11 15:18:01', '139.0.186.187', 'Chrome'),
-(125, '2017-04-11 15:18:25', '125.166.215.131', 'Chrome'),
-(251, '2017-04-11 16:13:20', '125.163.92.209', 'Chrome'),
-(252, '2017-04-11 16:14:19', '182.253.142.24', 'Chrome'),
-(253, '2017-04-11 16:14:28', '120.188.86.148', 'Chrome'),
-(254, '2017-04-11 16:14:56', '182.253.163.61', 'Chrome'),
-(255, '2017-04-11 16:16:02', '36.74.148.31', 'Chrome'),
-(256, '2017-04-11 16:16:57', '8.37.233.156', 'Safari'),
-(257, '2017-04-11 16:17:04', '114.125.56.121', 'Firefox'),
-(258, '2017-04-11 16:17:12', '158.140.165.20', 'Chrome'),
-(259, '2017-04-11 16:17:17', '125.164.97.226', 'Chrome'),
-(260, '2017-04-11 16:17:18', '120.188.92.249', 'Chrome'),
-(261, '2017-04-11 16:17:26', '118.137.208.31', 'Chrome'),
-(262, '2017-04-11 16:17:30', '180.244.71.107', 'Chrome'),
-(263, '2017-04-11 16:17:37', '120.188.87.220', 'Chrome'),
-(264, '2017-04-11 16:17:57', '112.215.172.199', 'Safari'),
-(265, '2017-04-11 16:18:23', '110.138.44.236', 'Chrome'),
-(266, '2017-04-11 16:18:35', '168.235.195.254', 'Safari'),
-(267, '2017-04-11 16:18:40', '180.245.98.188', 'Chrome'),
-(268, '2017-04-11 16:18:58', '114.125.183.102', 'Chrome'),
-(269, '2017-04-11 16:19:18', '125.164.38.13', 'Chrome'),
-(270, '2017-04-11 16:19:27', '114.121.239.102', 'Chrome'),
-(271, '2017-04-11 16:20:03', '168.235.206.137', 'Safari'),
-(272, '2017-04-11 16:20:32', '202.80.213.87', 'Chrome'),
-(273, '2017-04-11 16:21:18', '180.246.73.3', 'Chrome'),
-(274, '2017-04-11 16:22:02', '36.75.32.145', 'Mozilla'),
-(275, '2017-04-11 16:22:04', '112.215.154.115', 'Chrome'),
-(276, '2017-04-11 16:22:09', '36.73.96.185', 'Mozilla'),
-(277, '2017-04-11 16:22:38', '8.37.232.215', 'Safari'),
-(278, '2017-04-11 16:22:53', '36.68.233.0', 'Chrome'),
-(279, '2017-04-11 16:23:08', '36.84.224.73', 'Chrome'),
-(280, '2017-04-11 16:23:29', '66.220.151.86', 'Other'),
-(281, '2017-04-11 16:24:01', '120.188.75.121', 'Chrome'),
-(282, '2017-04-11 16:24:19', '207.241.226.233', 'Mozilla'),
-(283, '2017-04-11 16:24:35', '36.73.181.116', 'Chrome'),
-(284, '2017-04-11 16:25:38', '198.186.192.44', 'Other'),
-(285, '2017-04-11 16:25:56', '114.4.78.117', 'Chrome'),
-(286, '2017-04-11 16:26:38', '36.72.95.85', 'Firefox'),
-(287, '2017-04-11 16:27:26', '120.188.81.107', 'Chrome'),
-(288, '2017-04-11 16:28:19', '114.124.149.112', 'Chrome'),
-(289, '2017-04-11 16:28:29', '114.125.205.41', 'Chrome'),
-(290, '2017-04-11 16:28:54', '125.163.78.202', 'Chrome'),
-(291, '2017-04-11 16:29:17', '114.125.52.130', 'Firefox'),
-(292, '2017-04-11 16:29:45', '114.4.78.150', 'Chrome'),
-(293, '2017-04-11 16:29:47', '114.121.156.129', 'Chrome'),
-(294, '2017-04-11 16:29:51', '112.215.172.8', 'Chrome'),
-(295, '2017-04-11 16:30:30', '114.125.166.163', 'Chrome'),
-(296, '2017-04-11 16:30:35', '139.195.187.141', 'Chrome'),
-(297, '2017-04-11 16:30:53', '36.72.21.12', 'Chrome'),
-(298, '2017-04-11 16:32:34', '8.37.225.108', 'Firefox'),
-(299, '2017-04-11 16:32:39', '180.248.6.118', 'Chrome'),
-(300, '2017-04-11 16:33:44', '8.37.233.95', 'Safari'),
 (301, '2017-04-11 16:34:16', '120.188.80.6', 'Safari'),
 (302, '2017-04-11 16:34:52', '211.227.156.112', 'Chrome'),
 (303, '2017-04-11 16:34:54', '125.167.187.126', 'Chrome'),
@@ -898,34 +843,6 @@ INSERT INTO `tbl_pengunjung` (`pengunjung_id`, `pengunjung_tanggal`, `pengunjung
 -- --------------------------------------------------------
 
 --
--- Table structure for table `tbl_portfolio`
---
-
-CREATE TABLE `tbl_portfolio` (
-  `port_id` int(11) NOT NULL,
-  `port_judul` varchar(200) DEFAULT NULL,
-  `port_deskripsi` text DEFAULT NULL,
-  `port_tanggal` timestamp NULL DEFAULT current_timestamp(),
-  `port_author` varchar(40) DEFAULT NULL,
-  `port_image` varchar(40) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `tbl_portfolio`
---
-
-INSERT INTO `tbl_portfolio` (`port_id`, `port_judul`, `port_deskripsi`, `port_tanggal`, `port_author`, `port_image`) VALUES
-(1, 'Aplikasi Online Restaurant', '<p>M-Food merupakan aplikasi yang dirancang khusus untuk order makanan online berbasis web mobile. Dirancang dengan menggunakan jquery mobile dan codeigniter dengan icon dari font awesome sehingga mudah dikembangkan oleh developer manapun.</p>\r\n\r\n<p>Aplikasi ini mengelompokkan menu berdasarkan makanan, minuman, hot promo, dan favorit.</p>\r\n\r\n<p>Adapun fitur dari aplikasi ini adalah sebagai berikut:</p>\r\n\r\n<p>1 Dashboard (Grafik Penjualan, Garfik Pelanggan, Lates Order, Lates Pelanggan)</p>\r\n\r\n<p>2 Management Pengguna</p>\r\n\r\n<p>3 Management Menu (Makanan/Minuman)</p>\r\n\r\n<p>4 Management Pelanggan</p>\r\n\r\n<p>5 Management Order</p>\r\n\r\n<p>6 Management Konfirmasi Pembayaran</p>\r\n\r\n<p>7 Management Rekening Bank</p>\r\n\r\n<p>8 Management Gallery</p>\r\n\r\n<p>9 Management Status Order</p>\r\n\r\n<p>Info lebih lebih lanjut kunjungi www.mfikri.com</p>\r\n', '2017-07-20 03:53:59', 'M Fikri Setiadi', '943df63e4b65040f584f0f8df4897b89.jpg'),
-(3, 'Point Of Sale', '<p>Aplikasi Point of sale merupakan sebuah aplikasi yang dirancang khusus untuk mempermudah dan mempercepat proses transakasi penjualan. Dirancang menggunakan framework Codeigniter dengan konsep metro design yang elegan menjadi daya tarik aplikasi ini. Selain itu, basic design dari aplikasi ini menggunakan BOOTSTRAP sehingga memudahkan web developer untuk mengembangkan design aplikasi ini menjadi lebih menarik lagi.</p>\r\n\r\n<p>Proses transakasi penjualan dan pembelian menggunakan AJAX &nbsp;(<em>Asyncronous Javascript and XML</em>). Memungkinkan user berkomunikasi dengan database tanpa <em>reload page</em>.</p>\r\n\r\n<p>Adapun fitur dari aplikasi ini sebagai berikut:</p>\r\n\r\n<p>1. Management data barang</p>\r\n\r\n<p>2. Management data kategori</p>\r\n\r\n<p>3. Management User (Pengguna)</p>\r\n\r\n<p>4. Management Suplier</p>\r\n\r\n<p>5. Transaksi Pembelian</p>\r\n\r\n<p>7. Transaksi Penjualan Eceran dan Grosir</p>\r\n\r\n<p>8. Retur Penjualan</p>\r\n\r\n<p>9. Laporan Data Barang</p>\r\n\r\n<p>10. Laporan Stok Barang</p>\r\n\r\n<p>11. Laporan Penjualan</p>\r\n\r\n<p>12. Laporan Penjualan Per Tanggal</p>\r\n\r\n<p>13. Laporan Penjualan Per Bulan</p>\r\n\r\n<p>14. Laporan Penjualan Per Tahun</p>\r\n\r\n<p>15. Laporan Laba / Rugi</p>\r\n\r\n<p>16. Grafik Stok Barang</p>\r\n\r\n<p>17. Grafik Penjualan Per Bulan</p>\r\n\r\n<p>18. Grafik Penjualan Per Tahun</p>\r\n', '2017-07-20 07:23:14', 'M Fikri Setiadi', 'cdfd50f2629c6bbe82fb131866632484.jpg'),
-(4, 'Website Tour and Travel', '<p>Download source code Tour and Travel. M-Travel merupakan Source Code Open Source berbasis web untuk company profil tour and travel yang menyajikan informasi dan paket wisata pilihan. Dimana para wisatawan dapat membooking paket wisata yang diinginkan secara online. Source Code ini mendukung berbagai macam metode pembayaran, dan lebih lagi metode pembayaran dapat ditambahkan sesuai kebutuhan.</p>\r\n\r\n<p>Source Code ini dibangun menggunakan PHP framework Codeigniter v2.2.6, dirancang menggunakan bahasa pemrograman umum sehingga code program mudah dipelajari oleh developer web lain sehingga mudah untuk dikembangkan oleh pihak lain.</p>\r\n\r\n<p>Selain itu, source code ini tidak menggunakan Active Record, sehingga semua query mudah dibaca dan di pelajari.</p>\r\n\r\n<p>Backend dari Source Code ini dibangun menggunakan template Admin LTE, yaitu template yang sangat umum bagi developer web saat ini. Selain itu, source code ini juga menggunakan <strong>Toast Message</strong> untuk menampilkan pesan. Hal itulah yang membuat souce code ini menjadi &ldquo;Pretty Awesome&rdquo;.</p>\r\n\r\n<p>Frontend dari source code ini dibangun menggunakan premium template. Dalam arti kata template BERBAYAR. Hhmm.., beruntunglah Anda bisa menemukan source code ini, karena penulis membagikan tidak hanya templatenya, akan tetapi program komplit secara Cuma-Cuma alias GRATISS.</p>\r\n', '2017-07-20 07:25:06', 'M Fikri Setiadi', '324939fd8aa9d77805b5ff85706e3319.jpg'),
-(5, 'Coffee Break', '<p>Ini adalah deskripsi. Ini adalah deskripsi. Ini adalah deskripsi. Ini adalah deskripsi. Ini adalah deskripsi. Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.</p>\r\n\r\n<p>Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.Ini adalah deskripsi.</p>\r\n', '2017-08-29 13:29:02', 'M Fikri Setiadi', '9beb4be9761c824a981c328c6f746c66.jpg'),
-(6, 'Awesome Design', '<p>Ini adalah deskripsi&nbsp;Ini adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsi&nbsp;Ini adalah deskripsi&nbsp;Ini adalah deskripsi&nbsp;Ini adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsiIni adalah deskripsi&nbsp;Ini adalah deskripsi&nbsp;Ini adalah deskripsi.</p>\r\n\r\n<p>Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi.</p>\r\n', '2017-08-29 13:31:55', 'M Fikri Setiadi', 'e41fddef326ab73454385abc8393a9a5.jpg'),
-(7, 'Android Apps', '<p>Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi.</p>\r\n\r\n<p>Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi.</p>\r\n\r\n<p>Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi Ini adalah deskripsi.</p>\r\n', '2017-08-29 13:33:57', 'M Fikri Setiadi', '7abb9ec5dcaf999d0a4a74ea2491e848.jpg'),
-(8, 'Blackpink', '<p>Is Amazing, an A revolution.</p>\r\n', '2021-02-02 23:35:04', 'novi', '3a4e4acc6045c6fd18409bd7177c44a6.jpg');
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `tbl_post_rating`
 --
 
@@ -993,67 +910,86 @@ INSERT INTO `tbl_produk` (`produk_id`, `produk_judul`, `produk_harga`, `produk_i
 --
 
 --
+-- Indexes for table `tbl_administrator`
+--
+ALTER TABLE `tbl_administrator`
+  ADD PRIMARY KEY (`administrator_id`),
+  ADD KEY `album_id` (`album_id`,`inbox_id`,`rate_id`,`komentar_id`,`kategori_id`,`pengunjung_id`,`produk_id`,`pengguna_id`,`pembeli_id`,`views_id`),
+  ADD KEY `kategori_id` (`kategori_id`),
+  ADD KEY `views_id` (`views_id`),
+  ADD KEY `pengunjung_id` (`pengunjung_id`),
+  ADD KEY `inbox_id` (`inbox_id`),
+  ADD KEY `rate_id` (`rate_id`),
+  ADD KEY `pengguna_id` (`pengguna_id`),
+  ADD KEY `pembeli_id` (`pembeli_id`),
+  ADD KEY `produk_id` (`produk_id`),
+  ADD KEY `komentar_id` (`komentar_id`);
+
+--
 -- Indexes for table `tbl_album`
 --
 ALTER TABLE `tbl_album`
   ADD PRIMARY KEY (`album_id`),
-  ADD KEY `album_pengguna_id` (`album_pengguna_id`);
+  ADD KEY `album_pengguna_id` (`album_pengguna_id`),
+  ADD KEY `album_id` (`album_id`);
 
 --
 -- Indexes for table `tbl_inbox`
 --
 ALTER TABLE `tbl_inbox`
-  ADD PRIMARY KEY (`inbox_id`);
+  ADD PRIMARY KEY (`inbox_id`),
+  ADD KEY `inbox_id` (`inbox_id`);
 
 --
 -- Indexes for table `tbl_kategori`
 --
 ALTER TABLE `tbl_kategori`
-  ADD PRIMARY KEY (`kategori_id`);
+  ADD PRIMARY KEY (`kategori_id`),
+  ADD KEY `kategori_id` (`kategori_id`);
 
 --
 -- Indexes for table `tbl_komentar`
 --
 ALTER TABLE `tbl_komentar`
   ADD PRIMARY KEY (`komentar_id`),
-  ADD KEY `komentar_tulisan_id` (`komentar_tulisan_id`);
+  ADD KEY `komentar_tulisan_id` (`komentar_tulisan_id`),
+  ADD KEY `komentar_id` (`komentar_id`);
 
 --
 -- Indexes for table `tbl_pembeli`
 --
 ALTER TABLE `tbl_pembeli`
   ADD PRIMARY KEY (`pembeli_id`),
-  ADD KEY `pembeli_produk_id` (`pembeli_produk_id`);
+  ADD KEY `pembeli_produk_id` (`pembeli_produk_id`),
+  ADD KEY `pembeli_id` (`pembeli_id`);
 
 --
 -- Indexes for table `tbl_pengguna`
 --
 ALTER TABLE `tbl_pengguna`
-  ADD PRIMARY KEY (`pengguna_id`);
+  ADD PRIMARY KEY (`pengguna_id`),
+  ADD KEY `pengguna_id` (`pengguna_id`);
 
 --
 -- Indexes for table `tbl_pengunjung`
 --
 ALTER TABLE `tbl_pengunjung`
-  ADD PRIMARY KEY (`pengunjung_id`);
-
---
--- Indexes for table `tbl_portfolio`
---
-ALTER TABLE `tbl_portfolio`
-  ADD PRIMARY KEY (`port_id`);
+  ADD PRIMARY KEY (`pengunjung_id`),
+  ADD KEY `pengunjung_id` (`pengunjung_id`);
 
 --
 -- Indexes for table `tbl_post_rating`
 --
 ALTER TABLE `tbl_post_rating`
-  ADD PRIMARY KEY (`rate_id`);
+  ADD PRIMARY KEY (`rate_id`),
+  ADD KEY `rate_id` (`rate_id`);
 
 --
 -- Indexes for table `tbl_post_views`
 --
 ALTER TABLE `tbl_post_views`
-  ADD PRIMARY KEY (`views_id`);
+  ADD PRIMARY KEY (`views_id`),
+  ADD KEY `views_id` (`views_id`);
 
 --
 -- Indexes for table `tbl_produk`
@@ -1061,11 +997,18 @@ ALTER TABLE `tbl_post_views`
 ALTER TABLE `tbl_produk`
   ADD PRIMARY KEY (`produk_id`),
   ADD KEY `produk_kategori_id` (`produk_kategori_id`),
-  ADD KEY `produk_pengguna_id` (`produk_pengguna_id`);
+  ADD KEY `produk_pengguna_id` (`produk_pengguna_id`),
+  ADD KEY `produk_id` (`produk_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `tbl_administrator`
+--
+ALTER TABLE `tbl_administrator`
+  MODIFY `administrator_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `tbl_album`
@@ -1110,12 +1053,6 @@ ALTER TABLE `tbl_pengunjung`
   MODIFY `pengunjung_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=948;
 
 --
--- AUTO_INCREMENT for table `tbl_portfolio`
---
-ALTER TABLE `tbl_portfolio`
-  MODIFY `port_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
-
---
 -- AUTO_INCREMENT for table `tbl_post_rating`
 --
 ALTER TABLE `tbl_post_rating`
@@ -1132,6 +1069,25 @@ ALTER TABLE `tbl_post_views`
 --
 ALTER TABLE `tbl_produk`
   MODIFY `produk_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=46;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `tbl_administrator`
+--
+ALTER TABLE `tbl_administrator`
+  ADD CONSTRAINT `tbl_administrator_ibfk_1` FOREIGN KEY (`kategori_id`) REFERENCES `tbl_kategori` (`kategori_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_10` FOREIGN KEY (`komentar_id`) REFERENCES `tbl_komentar` (`komentar_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_2` FOREIGN KEY (`views_id`) REFERENCES `tbl_post_views` (`views_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_3` FOREIGN KEY (`pengunjung_id`) REFERENCES `tbl_pengunjung` (`pengunjung_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_4` FOREIGN KEY (`inbox_id`) REFERENCES `tbl_inbox` (`inbox_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_5` FOREIGN KEY (`album_id`) REFERENCES `tbl_album` (`album_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_6` FOREIGN KEY (`rate_id`) REFERENCES `tbl_post_rating` (`rate_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_7` FOREIGN KEY (`pengguna_id`) REFERENCES `tbl_pengguna` (`pengguna_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_8` FOREIGN KEY (`pembeli_id`) REFERENCES `tbl_pembeli` (`pembeli_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `tbl_administrator_ibfk_9` FOREIGN KEY (`produk_id`) REFERENCES `tbl_produk` (`produk_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
